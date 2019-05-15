@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+henry = User.create!(name: 'Henry', email: 'h@me.com')
+sunny = User.create!(name: 'Sunny', email: 's@me.com')
+
+[henry, sunny].each do |user|
+  2.times do |i|
+    user.events.create!(name: "#{user.name}'s party #{i+1}",
+                        location: "#{user.name}'s house'")
+  end
+end

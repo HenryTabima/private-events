@@ -1,3 +1,8 @@
 <h1>Users#show</h1>
 <p><%= @user.name %></p>
 <p><%= @user.email %></p>
+
+<h2>Events</h2>
+<% @user.events.each do |event| %>
+  <p><%= event.name %> - <%= event.location %></p>
+<% end %>
