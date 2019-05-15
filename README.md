@@ -1,24 +1,8 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project to practice associations in rails from the [corresponding section in Odin project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
 
-Things you may want to cover:
+## Contributors
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [Henry Tabima Girlado](https://github.com/HenryTabima)
+- [Sunny Asar](https://github.com/SunnyAsar)
