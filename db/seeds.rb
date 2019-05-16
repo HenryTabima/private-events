@@ -11,7 +11,18 @@ sunny = User.create!(name: 'Sunny', email: 's@me.com')
 
 [henry, sunny].each do |user|
   2.times do |i|
-    user.events.create!(name: "#{user.name}'s party #{i+1}",
-                        location: "#{user.name}'s house'")
+    event = user.events.create!(name: "#{user.name}'s party #{i+1}",
+                        location: "#{user.name}'s house'",
+                        event_date: 3.hours.from_now)
+                        event.attendees += [henry]
+  end
+end
+
+[henry, sunny].each do |user|
+  2.times do |i|
+    event = user.events.create!(name: "#{user.name}'s past party #{i+1}",
+                        location: "#{user.name}'s house'",
+                        event_date: 3.hours.ago)
+                        event.attendees += [henry, sunny]
   end
 end

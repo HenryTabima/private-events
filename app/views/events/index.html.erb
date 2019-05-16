@@ -4,3 +4,21 @@
     <li><%= event.name %> - <%= event.location %> | By <%= event.creator.name %></li>
   <% end %>
 </ul>
+
+
+<br>
+<h2>My past Events</h2>
+
+<ol>
+  <% @previous_events.each do |event| %>
+    <li> <%= event.name %> - <%= event.event_date %> </li> 
+  <% end %>
+</ol>
+<br>
+<h2>My Upcoming Events</h2>
+
+<ol>
+  <% @upcoming_events.each do |event| %>
+    <li> <%= event.name %> - <%= event.event_date %> </li> 
+  <% end %>
+</ol>

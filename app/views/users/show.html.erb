@@ -6,3 +6,28 @@
 <% @user.events.each do |event| %>
   <p><%= event.name %> - <%= event.location %>  </p> 
 <% end %>
+<br>
+
+<h2>All My Events</h2>
+
+<ol>
+  <% @user.attended_events.each do |event| %>
+    <li> <%= event.name %> - <%= event.event_date %> </li> 
+  <% end %>
+</ol>
+<br>
+<h2>My past Events</h2>
+
+<ol>
+  <% @previous_events.each do |event| %>
+    <li> <%= event.name %> - <%= event.event_date %> </li> 
+  <% end %>
+</ol>
+<br>
+<h2>My Upcoming Events</h2>
+
+<ol>
+  <% @upcoming_events.each do |event| %>
+    <li> <%= event.name %> - <%= event.event_date %> </li> 
+  <% end %>
+</ol>

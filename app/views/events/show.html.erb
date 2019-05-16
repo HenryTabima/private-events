@@ -1,3 +1,12 @@
 <h1>Event#show</h1>
 
-<p><%= @event.name %> - <%= @event.location %> | By: <%= @event.creator.name %></p>
+<p><%= @event.name %> - <%= @event.location %> | By: <%= @event.creator.name %></p> 
+
+<br>
+<h4> Attendees </h4>
+
+<ol>
+  <% @event.attendees.each do |attendee| %>
+    <li> <%= attendee.name %> </li>
+  <% end %>
+</ol>
