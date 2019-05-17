@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @upcoming_events =  Event.where('event_date > ?', DateTime.now)
+    @upcoming_events =  Event.upcoming
     @previous_events = Event.past
 
   end
@@ -26,6 +26,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :location)
+    params.require(:event).permit(:name, :location, :event_date)
   end
 end

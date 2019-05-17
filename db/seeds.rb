@@ -5,24 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 henry = User.create!(name: 'Henry', email: 'h@me.com')
 sunny = User.create!(name: 'Sunny', email: 's@me.com')
 
-[henry, sunny].each do |user|
-  2.times do |i|
-    event = user.events.create!(name: "#{user.name}'s party #{i+1}",
-                        location: "#{user.name}'s house'",
-                        event_date: 3.hours.from_now)
-                        event.attendees += [henry]
-  end
-end
+users = [henry, sunny]
 
-[henry, sunny].each do |user|
+users.each do |user|
   2.times do |i|
-    event = user.events.create!(name: "#{user.name}'s past party #{i+1}",
-                        location: "#{user.name}'s house'",
-                        event_date: 3.hours.ago)
-                        event.attendees += [henry, sunny]
+    event = user.events.create!(name: "#{user.name}'s party #{i + 1}",
+                                location: "#{user.name}'s house'",
+                                event_date: 3.days.from_now)
+    event.attendees += users
+  end
+  2.times do |i|
+    event = user.events.create!(name: "#{user.name}'s past party #{i + 1}",
+                                location: "#{user.name}'s house'",
+                                event_date: 3.days.ago)
+    event.attendees += users
   end
 end
