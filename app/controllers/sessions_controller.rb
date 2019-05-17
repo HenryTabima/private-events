@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout
+    session.delete(:user_id)
+    @current_user = nil
     redirect_to signin_path
   end
 end

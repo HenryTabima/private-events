@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  root 'events#index'
   resources :events, only: %i[new create index show]
   resources :users, only: %i[new show create]
   get '/signin', to: 'sessions#new'

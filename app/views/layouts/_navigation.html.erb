@@ -1,0 +1,29 @@
+
+<nav class="navigation">
+
+        <div class="logo">
+            <h2> 
+            <%= link_to "Private Meeting", root_path %> 
+            </h2>
+        </div>
+
+      <div >
+        <ul class="nav-list">
+        
+        <% if logged_in? %>
+
+        <li class="link-item"> <%= link_to "Events", events_path %> </li>
+          <li class="link-item"> <%= link_to "#{current_user.name}'s page", current_user %> </li>
+        <li class="link-item"> <%= link_to 'Log out', logout_path, method: :delete  %>
+        
+          <% else %>
+
+        <li class="link-item"><%= link_to "sigup", new_user_path %> </li>
+          <li class="link-item"> <%= link_to "sigin", signin_path %></li>
+            <% end %>
+        </ul>
+      </div>
+
+      
+  
+</nav>

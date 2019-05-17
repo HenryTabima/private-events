@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @upcoming_events =  Event.upcoming
+    @upcoming_events =  Event.where('event_date > ?', DateTime.now)
     @previous_events = Event.past
 
   end
