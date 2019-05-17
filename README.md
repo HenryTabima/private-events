@@ -1,24 +1,40 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project to practice associations in rails from the [corresponding section in Odin project](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+clone the repo
 
-* System dependencies
+```bash
+git clone https://github.com/HenryTabima/private-events/
+```
 
-* Configuration
+change directory and install gems
 
-* Database creation
+```bash
+cd private-events && bundle install
+```
 
-* Database initialization
+run migration and seed db
 
-* How to run the test suite
+```bash
+rails db:migrate && rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Start server
 
-* Deployment instructions
+```bash
+rails s
+```
 
-* ...
+open `localhost:3000` and click on login.
+
+you can login as `Henry` or `Sunny`.
+
+or you can create your own user.
+
+## Contributors
+
+- [Henry Tabima Girlado](https://github.com/HenryTabima)
+- [Sunny Asar](https://github.com/SunnyAsar)
