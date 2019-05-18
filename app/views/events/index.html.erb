@@ -10,15 +10,15 @@
 <h2>My past Events</h2>
 
 <ol>
-  <% @previous_events.each do |event| %>
-    <li> <%= event.name %> - <%= event.event_date %> </li> 
+  <% @events.past.each do |event| %>
+    <li> <%= event.name %> - <%= event.event_date %> </li>
   <% end %>
 </ol>
 <br>
 <h2>My Upcoming Events</h2>
 
 <ol>
-  <% @upcoming_events.each do |event| %>
-    <li> <%= event.name %> - <%= event.event_date %> </li> 
+  <% @events.upcoming.each do |event| %>
+    <li> <%= event.name %> - <%= event.event_date %> </li>
   <% end %>
 </ol>
