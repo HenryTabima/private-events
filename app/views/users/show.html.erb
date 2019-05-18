@@ -2,32 +2,42 @@
 <p><%= @user.name %></p>
 <p><%= @user.email %></p>
 
-<h2>Events</h2>
-<% @user.events.each do |event| %>
-  <p><%= event.name %> - <%= event.location %>  </p> 
-<% end %>
-<br>
+<div class="events-container">
+  <div class="my-events">
+    <h2>My upcoming Events</h2>
+    <% @user.events.upcoming.each do |event| %>
+      <p><%= event.name %> - <%= event.location %>  </p>
+    <% end %>
+    <br />
+    <h2>My past Events</h2>
+    <% @user.events.past.each do |event| %>
+      <p><%= event.name %> - <%= event.location %>  </p>
+    <% end %>
+    <br />
+    <h2>All my Events</h2>
+    <% @user.events.each do |event| %>
+      <p><%= event.name %> - <%= event.location %>  </p>
+    <% end %>
+  </div>
+  <div class="attended-events">
 
-<h2>All My Events</h2>
+    <h2>Upcoming Events to attend</h2>
 
-<ol>
-  <% @user.attended_events.each do |event| %>
-    <li> <%= event.name %> - <%= event.event_date %> </li> 
-  <% end %>
-</ol>
-<br>
-<h2>My past Events</h2>
+    <ol>
+      <% @user.attended_events.upcoming.each do |event| %>
+        <li> <%= event.name %> - <%= event.event_date %> </li>
+      <% end %>
+    </ol>
+    <br>
 
-<ol>
-  <% @previous_events.each do |event| %>
-    <li> <%= event.name %> - <%= event.event_date %> </li> 
-  <% end %>
-</ol>
-<br>
-<h2>My Upcoming Events</h2>
+    <h2>Attended Events</h2>
 
-<ol>
-  <% @upcoming_events.each do |event| %>
-    <li> <%= event.name %> - <%= event.event_date %> </li> 
-  <% end %>
-</ol>
+    <ol>
+      <% @user.attended_events.past.each do |event| %>
+        <li> <%= event.name %> - <%= event.event_date %> </li>
+      <% end %>
+    </ol>
+    <br>
+
+  </div>
+</div>
