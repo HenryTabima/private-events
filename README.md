@@ -16,10 +16,10 @@ change directory and install gems
 cd private-events && bundle install
 ```
 
-run migration and seed db
+populate development data into your db
 
 ```bash
-rails db:migrate && rails db:seed
+rails dev:populate
 ```
 
 Start server
