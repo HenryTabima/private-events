@@ -1,0 +1,14 @@
+<h1>Events#new</h1>
+
+<%= form_for(@event) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :event_date, "Date" %>
+  <%= f.date_field :event_date %>
+
+  <%= f.submit %>
+<% end %>

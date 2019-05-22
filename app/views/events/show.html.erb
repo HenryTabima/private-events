@@ -1,0 +1,10 @@
+<h1>Event#show</h1>
+
+<p><%= @event.name %> - <%= @event.location %> | By: <%= @event.creator.name %></p>
+
+<br>
+<h4> Attendees </h4>
+
+<ol>
+  <%= render @event.attendees %>
+</ol>
