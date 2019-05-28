@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attendants, source: :attendee
 
   default_scope -> { order(:date) }
-  scope :past, -> { where('event_date < ?', DateTime.current) }
-  scope :upcoming, -> { where('event_date > ?', DateTime.current) }
+  scope :past, -> { where('date < ?', DateTime.current) }
+  scope :upcoming, -> { where('date > ?', DateTime.current) }
 
 end

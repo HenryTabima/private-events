@@ -9,6 +9,6 @@ FactoryBot.define do
   factory :event do
     name { Faker::Hipster.sentence(3)}
     location { Faker::Address.street_address }
-    event_date { Faker::Time.between(10.days.ago, 10.days.from_now) }
+    date { Faker::Time.between(10.days.ago, 10.days.from_now) }
   end
 end
